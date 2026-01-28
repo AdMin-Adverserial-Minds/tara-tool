@@ -1,5 +1,3 @@
-<!-- redeploy -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -629,7 +627,353 @@
             background: #b91c1c;
         }
 
+        /* Methodology Section Styles */
+        .methodology-quick-ref {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .quick-ref-card {
+            background: var(--bg-dark);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        
+        .quick-ref-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        
+        .quick-ref-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+        
+        .quick-ref-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        .quick-ref-note {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+        
+        .methodology-section {
+            background: var(--bg-dark);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+        
+        .methodology-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .methodology-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .methodology-icon {
+            font-size: 1.3rem;
+        }
+        
+        .methodology-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .step-content strong {
+            font-size: 0.9rem;
+        }
+        
+        .step-content span {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .threat-classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        
+        .threat-class-card {
+            background: var(--bg);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .threat-class-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .threat-class-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        
+        .threat-class-name {
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: var(--accent);
+        }
+        
+        .threat-class-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        
+        .stride-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        
+        .stride-card {
+            background: var(--bg);
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid;
+            transition: transform 0.2s;
+        }
+        
+        .stride-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .stride-s { border-color: #ef4444; }
+        .stride-t { border-color: #f97316; }
+        .stride-r { border-color: #eab308; }
+        .stride-i { border-color: #22c55e; }
+        .stride-d { border-color: #3b82f6; }
+        .stride-e { border-color: #8b5cf6; }
+        .stride-o { border-color: #6b7280; }
+        
+        .stride-letter {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stride-s .stride-letter { color: #ef4444; }
+        .stride-t .stride-letter { color: #f97316; }
+        .stride-r .stride-letter { color: #eab308; }
+        .stride-i .stride-letter { color: #22c55e; }
+        .stride-d .stride-letter { color: #3b82f6; }
+        .stride-e .stride-letter { color: #8b5cf6; }
+        .stride-o .stride-letter { color: #6b7280; }
+        
+        .stride-name {
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .stride-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        
+        .stride-example {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-style: italic;
+            border-top: 1px solid var(--border);
+            padding-top: 8px;
+            margin-top: 5px;
+        }
+        
+        .impact-scale-visual, .likelihood-scale-visual {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .scale-item, .lscale-item {
+            flex: 1;
+            text-align: center;
+            padding: 12px 8px;
+            border-radius: 8px;
+            color: white;
+        }
+        
+        .scale-0 { background: #22c55e; }
+        .scale-1 { background: #84cc16; }
+        .scale-2 { background: #eab308; }
+        .scale-3 { background: #f97316; }
+        .scale-4 { background: #ef4444; }
+        
+        .lscale-0 { background: #22c55e; }
+        .lscale-1 { background: #84cc16; }
+        .lscale-2 { background: #eab308; }
+        .lscale-3 { background: #f97316; }
+        
+        .scale-value, .lscale-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .scale-label, .lscale-label {
+            font-size: 0.75rem;
+            margin-top: 3px;
+        }
+        
+        .likelihood-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .lcat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .lcat-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .lcat-vu { background: #22c55e; }
+        .lcat-u { background: #84cc16; }
+        .lcat-ml { background: #eab308; }
+        .lcat-l { background: #f97316; }
+        .lcat-vl { background: #ef4444; }
+        
+        .residual-risk-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 20px;
+            background: var(--bg);
+            border-radius: 10px;
+        }
+        
+        .flow-step {
+            text-align: center;
+            padding: 15px;
+            background: var(--bg-dark);
+            border-radius: 10px;
+            min-width: 120px;
+            border: 1px solid var(--border);
+        }
+        
+        .flow-icon {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .flow-label {
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 3px;
+        }
+        
+        .flow-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .methodology-quick-ref {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .residual-risk-flow {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
         /* Admin Panel Styles */
+        .settings-section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .settings-section-title h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+        
+        .settings-section-title .section-icon {
+            font-size: 1.3rem;
+        }
+        
         .admin-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -1151,7 +1495,8 @@
 
         /* Impact/Likelihood cells centered */
         .expanded-table td.impact-cell,
-        .expanded-table td.score-cell {
+        .expanded-table td.score-cell,
+        .expanded-table td.likelihood-cell {
             text-align: center;
             cursor: help;
         }
@@ -1679,8 +2024,7 @@
             <button class="tab-btn" onclick="showTab('threats-list')">Threats List</button>
             <button class="tab-btn" onclick="showTab('risk-matrix')">Risk Matrix</button>
             <button class="tab-btn" onclick="showTab('methodology')">Methodology</button>
-            <button class="tab-btn" onclick="showTab('export')">Export / Import</button>
-            <button class="tab-btn" onclick="showTab('admin')">⚙️ Admin</button>
+            <button class="tab-btn" onclick="showTab('admin')">⚙️ Settings</button>
         </div>
 
         <!-- Dashboard Tab -->
@@ -2011,243 +2355,360 @@
         <div id="methodology" class="tab-content">
             <div class="card">
                 <h2>TARA Methodology</h2>
-                <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                    This framework is based on the Threat Analysis and Risk Assessment methodology proposed in the paper 
-                    "Invitation Is All You Need!" for evaluating risks to end users of LLM-powered applications.
+                <p style="color: var(--text-secondary); margin-bottom: 10px;">
+                    This framework implements the Threat Analysis and Risk Assessment (TARA) methodology from the research paper 
+                    <strong>"Invitation Is All You Need!"</strong> for evaluating security risks to end users of LLM-powered applications.
+                </p>
+                <p style="color: var(--accent); font-size: 0.85rem; margin-bottom: 25px;">
+                    💡 All categories, factors, and calculations can be customized in the <strong>Settings</strong> tab.
                 </p>
 
-                <h3>Steps of Risk Assessment</h3>
-                <table class="threats-table">
-                    <thead>
-                        <tr>
-                            <th>Step</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>1. Asset Identification</strong></td>
-                            <td>Cataloging all relevant user assets required to be secured (data, devices, applications, privacy)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>2. Adversary Identification</strong></td>
-                            <td>Profiling the adversary and describing the threat model</td>
-                        </tr>
-                        <tr>
-                            <td><strong>3. Threat Modeling</strong></td>
-                            <td>Predicting the threats and attack vectors (using STRIDE)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>4. Likelihood & Impact</strong></td>
-                            <td>Calculating threat practicality and impact scores</td>
-                        </tr>
-                        <tr>
-                            <td><strong>5. Risk Assessment</strong></td>
-                            <td>Creating a risk matrix from impact × likelihood</td>
-                        </tr>
-                        <tr>
-                            <td><strong>6. Risk Treatment Plan</strong></td>
-                            <td>Creating a mitigation plan (reduce, transfer, or accept)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>7. Residual Risk</strong></td>
-                            <td>Reassessing threats given deployed mitigations</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- Quick Reference Cards -->
+                <div class="methodology-quick-ref">
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-icon">💥</div>
+                        <div class="quick-ref-label">Impact Score</div>
+                        <div class="quick-ref-value">0-4</div>
+                        <div class="quick-ref-note">MAX of categories</div>
+                    </div>
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-icon">📊</div>
+                        <div class="quick-ref-label">Likelihood Score</div>
+                        <div class="quick-ref-value">0-3</div>
+                        <div class="quick-ref-note">AVG of factors</div>
+                    </div>
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-icon">⚠️</div>
+                        <div class="quick-ref-label">Risk Levels</div>
+                        <div class="quick-ref-value">6</div>
+                        <div class="quick-ref-note">Very Low → Critical</div>
+                    </div>
+                    <div class="quick-ref-card">
+                        <div class="quick-ref-icon">🔄</div>
+                        <div class="quick-ref-label">Residual Risk</div>
+                        <div class="quick-ref-value">Post-Mitigation</div>
+                        <div class="quick-ref-note">Re-assessed likelihood</div>
+                    </div>
+                </div>
 
-                <h3>Impact Score Calculation</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                    Impact is determined by the <strong>highest score</strong> received in any of four factors:
-                </p>
-                <table class="threats-table">
-                    <thead>
-                        <tr>
-                            <th>Score</th>
-                            <th>Safety</th>
-                            <th>Privacy</th>
-                            <th>Financial</th>
-                            <th>Operational</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>0 - Negligible</strong></td>
-                            <td>No impact</td>
-                            <td>No privacy outcome</td>
-                            <td>No loss</td>
-                            <td>No effect</td>
-                        </tr>
-                        <tr>
-                            <td><strong>1 - Minor</strong></td>
-                            <td>Mental health minor affected</td>
-                            <td>Non-sensitive data exposed</td>
-                            <td>Loss < $100</td>
-                            <td>Easy to invert</td>
-                        </tr>
-                        <tr>
-                            <td><strong>2 - Moderate</strong></td>
-                            <td>Mental health significantly affected</td>
-                            <td>User geolocated</td>
-                            <td>Loss < $1K</td>
-                            <td>Some effort to invert</td>
-                        </tr>
-                        <tr>
-                            <td><strong>3 - Severe</strong></td>
-                            <td>Physical environment affected</td>
-                            <td>Important info exfiltrated</td>
-                            <td>Loss < $10K</td>
-                            <td>Significant effort</td>
-                        </tr>
-                        <tr>
-                            <td><strong>4 - Critical</strong></td>
-                            <td>Life-threatening</td>
-                            <td>Sensitive data/video streaming</td>
-                            <td>Loss > $10K</td>
-                            <td>Loss of capability</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- Steps Section -->
+                <div class="methodology-section">
+                    <div class="methodology-header">
+                        <span class="methodology-icon">📋</span>
+                        <h3>7 Steps of Risk Assessment</h3>
+                    </div>
+                    <div class="methodology-steps">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <strong>Asset Identification</strong>
+                                <span>Catalog user assets to secure (data, devices, privacy)</span>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <strong>Adversary Identification</strong>
+                                <span>Profile the adversary and threat model</span>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <strong>Threat Modeling</strong>
+                                <span>Predict threats using STRIDE+O framework</span>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <strong>Likelihood & Impact</strong>
+                                <span>Calculate practicality and impact scores</span>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <strong>Risk Assessment</strong>
+                                <span>Create risk matrix (Impact × Likelihood)</span>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <strong>Risk Treatment</strong>
+                                <span>Plan mitigations (reduce, transfer, accept)</span>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">7</div>
+                            <div class="step-content">
+                                <strong>Residual Risk</strong>
+                                <span>Re-assess after mitigations are deployed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <h3>Likelihood Score Calculation</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                    Likelihood is calculated as the <strong>average</strong> of six factors (0-3 scale each):
-                </p>
-                <table class="threats-table">
-                    <thead>
-                        <tr>
-                            <th>Factor</th>
-                            <th>3 (Easy)</th>
-                            <th>2</th>
-                            <th>1</th>
-                            <th>0 (Hard)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Equipment</strong></td>
-                            <td>Standard (laptop)</td>
-                            <td>Specialized (GPU)</td>
-                            <td>Multiple specialized</td>
-                            <td>Restricted</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Expertise</strong></td>
-                            <td>Layman</td>
-                            <td>Proficient (B.Sc)</td>
-                            <td>Expert (Ph.D)</td>
-                            <td>Multiple experts</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Window of Opportunity</strong></td>
-                            <td>Unlimited</td>
-                            <td>Frequent</td>
-                            <td>Rare (monthly)</td>
-                            <td>Very rare (yearly)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Knowledge</strong></td>
-                            <td>Public</td>
-                            <td>Email required</td>
-                            <td>Password required</td>
-                            <td>Implementation required</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Elapsed Time</strong></td>
-                            <td>Days</td>
-                            <td>1-4 weeks</td>
-                            <td>1-6 months</td>
-                            <td>6+ months</td>
-                        </tr>
-                        <tr>
-                            <td><strong>User Interaction</strong></td>
-                            <td>None (0-click)</td>
-                            <td>Standard (frequent)</td>
-                            <td>Special</td>
-                            <td>Extensive</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- Threat Classes Section -->
+                <div class="methodology-section">
+                    <div class="methodology-header">
+                        <span class="methodology-icon">🏷️</span>
+                        <h3>LLM Threat Classes</h3>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem;">
+                        The paper identifies 5 primary threat classes specific to LLM-powered applications:
+                    </p>
+                    <div class="threat-classes-grid">
+                        <div class="threat-class-card">
+                            <div class="threat-class-icon">⚡</div>
+                            <div class="threat-class-name">Short-term Context Poisoning</div>
+                            <div class="threat-class-desc">Malicious content injected into the current conversation context via indirect prompt injection</div>
+                        </div>
+                        <div class="threat-class-card">
+                            <div class="threat-class-icon">🧠</div>
+                            <div class="threat-class-name">Long-term Memory Poisoning</div>
+                            <div class="threat-class-desc">Persistent poisoning of LLM's saved memory that affects future sessions</div>
+                        </div>
+                        <div class="threat-class-card">
+                            <div class="threat-class-icon">🔧</div>
+                            <div class="threat-class-name">Tool Misuse</div>
+                            <div class="threat-class-desc">Exploiting integrated tools (calendar, email, etc.) to perform unauthorized actions</div>
+                        </div>
+                        <div class="threat-class-card">
+                            <div class="threat-class-icon">🤖</div>
+                            <div class="threat-class-name">Automatic Agent Invocation</div>
+                            <div class="threat-class-desc">Triggering autonomous agent actions without user consent or awareness</div>
+                        </div>
+                        <div class="threat-class-card">
+                            <div class="threat-class-icon">📱</div>
+                            <div class="threat-class-name">Automatic App Invocation</div>
+                            <div class="threat-class-desc">Forcing LLM to invoke external applications maliciously</div>
+                        </div>
+                    </div>
+                </div>
 
-                <h3>Likelihood Categories</h3>
-                <ul style="color: var(--text-secondary); padding-left: 20px; line-height: 2;">
-                    <li><strong>Very Unlikely:</strong> Average score < 0.6</li>
-                    <li><strong>Unlikely:</strong> 0.6 ≤ score < 1.2</li>
-                    <li><strong>Moderately Likely:</strong> 1.2 ≤ score < 1.8</li>
-                    <li><strong>Likely:</strong> 1.8 ≤ score < 2.4</li>
-                    <li><strong>Very Likely:</strong> score ≥ 2.4</li>
-                </ul>
+                <!-- STRIDE Section -->
+                <div class="methodology-section">
+                    <div class="methodology-header">
+                        <span class="methodology-icon">🛡️</span>
+                        <h3>STRIDE+O Threat Categories</h3>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem;">
+                        Extended STRIDE framework with "Other" category for LLM-specific threats:
+                    </p>
+                    <div class="stride-grid">
+                        <div class="stride-card stride-s">
+                            <div class="stride-letter">S</div>
+                            <div class="stride-name">Spoofing</div>
+                            <div class="stride-desc">Impersonating something or someone else</div>
+                            <div class="stride-example">LLM impersonates trusted source in phishing attacks</div>
+                        </div>
+                        <div class="stride-card stride-t">
+                            <div class="stride-letter">T</div>
+                            <div class="stride-name">Tampering</div>
+                            <div class="stride-desc">Modifying data or code without authorization</div>
+                            <div class="stride-example">Prompt injection to modify LLM behavior</div>
+                        </div>
+                        <div class="stride-card stride-r">
+                            <div class="stride-letter">R</div>
+                            <div class="stride-name">Repudiation</div>
+                            <div class="stride-desc">Denying actions were performed</div>
+                            <div class="stride-example">LLM actions without proper audit trails</div>
+                        </div>
+                        <div class="stride-card stride-i">
+                            <div class="stride-letter">I</div>
+                            <div class="stride-name">Information Disclosure</div>
+                            <div class="stride-desc">Exposing data to unauthorized parties</div>
+                            <div class="stride-example">Data exfiltration via crafted prompts</div>
+                        </div>
+                        <div class="stride-card stride-d">
+                            <div class="stride-letter">D</div>
+                            <div class="stride-name">Denial of Service</div>
+                            <div class="stride-desc">Disrupting service availability</div>
+                            <div class="stride-example">Resource exhaustion attacks on LLM</div>
+                        </div>
+                        <div class="stride-card stride-e">
+                            <div class="stride-letter">E</div>
+                            <div class="stride-name">Elevation of Privilege</div>
+                            <div class="stride-desc">Gaining unauthorized access or capabilities</div>
+                            <div class="stride-example">Agent/app invocation without permission</div>
+                        </div>
+                        <div class="stride-card stride-o">
+                            <div class="stride-letter">O</div>
+                            <div class="stride-name">Other</div>
+                            <div class="stride-desc">Threats not fitting traditional categories</div>
+                            <div class="stride-example">Novel LLM-specific attack vectors</div>
+                        </div>
+                    </div>
+                </div>
 
-                <h3>STRIDE Threat Categories</h3>
-                <table class="threats-table">
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th>Description</th>
-                            <th>Example in LLM Context</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>S - Spoofing</strong></td>
-                            <td>Impersonating something or someone</td>
-                            <td>LLM impersonates trusted source in phishing</td>
-                        </tr>
-                        <tr>
-                            <td><strong>T - Tampering</strong></td>
-                            <td>Modifying data or code</td>
-                            <td>Injecting prompts to modify LLM behavior</td>
-                        </tr>
-                        <tr>
-                            <td><strong>R - Repudiation</strong></td>
-                            <td>Denying performed actions</td>
-                            <td>LLM actions without audit trail</td>
-                        </tr>
-                        <tr>
-                            <td><strong>I - Information Disclosure</strong></td>
-                            <td>Exposing information to unauthorized parties</td>
-                            <td>Data exfiltration via prompt injection</td>
-                        </tr>
-                        <tr>
-                            <td><strong>D - Denial of Service</strong></td>
-                            <td>Disrupting service availability</td>
-                            <td>Overwhelming LLM with malicious queries</td>
-                        </tr>
-                        <tr>
-                            <td><strong>E - Elevation of Privilege</strong></td>
-                            <td>Gaining unauthorized access</td>
-                            <td>Automatic agent/app invocation attacks</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- Impact Section -->
+                <div class="methodology-section">
+                    <div class="methodology-header">
+                        <span class="methodology-icon">💥</span>
+                        <h3>Impact Assessment (0-4 Scale)</h3>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem;">
+                        Impact Score = <strong>Maximum</strong> value across all impact categories. Higher score = greater harm.
+                    </p>
+                    <div class="impact-scale-visual">
+                        <div class="scale-item scale-0">
+                            <div class="scale-value">0</div>
+                            <div class="scale-label">Negligible</div>
+                        </div>
+                        <div class="scale-item scale-1">
+                            <div class="scale-value">1</div>
+                            <div class="scale-label">Minor</div>
+                        </div>
+                        <div class="scale-item scale-2">
+                            <div class="scale-value">2</div>
+                            <div class="scale-label">Moderate</div>
+                        </div>
+                        <div class="scale-item scale-3">
+                            <div class="scale-value">3</div>
+                            <div class="scale-label">Severe</div>
+                        </div>
+                        <div class="scale-item scale-4">
+                            <div class="scale-value">4</div>
+                            <div class="scale-label">Critical</div>
+                        </div>
+                    </div>
+                    <table class="threats-table" style="margin-top: 15px;">
+                        <thead>
+                            <tr>
+                                <th>Score</th>
+                                <th>Safety</th>
+                                <th>Privacy</th>
+                                <th>Financial</th>
+                                <th>Operational</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>0</strong></td><td>No impact</td><td>No exposure</td><td>No loss</td><td>No effect</td></tr>
+                            <tr><td><strong>1</strong></td><td>Minor mental impact</td><td>Non-sensitive data</td><td>&lt; $100</td><td>Easy to revert</td></tr>
+                            <tr><td><strong>2</strong></td><td>Significant mental</td><td>Geolocation exposed</td><td>&lt; $1K</td><td>Some effort</td></tr>
+                            <tr><td><strong>3</strong></td><td>Physical affected</td><td>Important info leaked</td><td>&lt; $10K</td><td>Significant effort</td></tr>
+                            <tr><td><strong>4</strong></td><td>Life-threatening</td><td>Sensitive data/video</td><td>&gt; $10K</td><td>Loss of capability</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Likelihood Section -->
+                <div class="methodology-section">
+                    <div class="methodology-header">
+                        <span class="methodology-icon">📊</span>
+                        <h3>Likelihood Assessment (0-3 Scale)</h3>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem;">
+                        Likelihood Score = <strong>Average</strong> of all factor scores. Higher score = easier to exploit.
+                    </p>
+                    <div class="likelihood-scale-visual">
+                        <div class="lscale-item lscale-0">
+                            <div class="lscale-value">0</div>
+                            <div class="lscale-label">Hard</div>
+                        </div>
+                        <div class="lscale-item lscale-1">
+                            <div class="lscale-value">1</div>
+                            <div class="lscale-label">Moderate</div>
+                        </div>
+                        <div class="lscale-item lscale-2">
+                            <div class="lscale-value">2</div>
+                            <div class="lscale-label">Easy</div>
+                        </div>
+                        <div class="lscale-item lscale-3">
+                            <div class="lscale-value">3</div>
+                            <div class="lscale-label">Very Easy</div>
+                        </div>
+                    </div>
+                    <table class="threats-table" style="margin-top: 15px;">
+                        <thead>
+                            <tr><th>Factor</th><th>3 (Easy)</th><th>2</th><th>1</th><th>0 (Hard)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Equipment</strong></td><td>Standard laptop</td><td>Specialized GPU</td><td>Multiple specialized</td><td>Restricted tools</td></tr>
+                            <tr><td><strong>Expertise</strong></td><td>Layman</td><td>Proficient (B.Sc)</td><td>Expert (Ph.D)</td><td>Multiple experts</td></tr>
+                            <tr><td><strong>Window</strong></td><td>Unlimited</td><td>Frequent</td><td>Rare (monthly)</td><td>Very rare (yearly)</td></tr>
+                            <tr><td><strong>Knowledge</strong></td><td>Public info</td><td>Email needed</td><td>Password needed</td><td>Implementation details</td></tr>
+                            <tr><td><strong>Time</strong></td><td>Days</td><td>1-4 weeks</td><td>1-6 months</td><td>6+ months</td></tr>
+                            <tr><td><strong>Interaction</strong></td><td>None (0-click)</td><td>Standard action</td><td>Special action</td><td>Extensive</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="likelihood-categories">
+                        <div class="lcat-item"><span class="lcat-badge lcat-vu">Very Unlikely</span> &lt; 0.6</div>
+                        <div class="lcat-item"><span class="lcat-badge lcat-u">Unlikely</span> 0.6 - 1.2</div>
+                        <div class="lcat-item"><span class="lcat-badge lcat-ml">Moderately Likely</span> 1.2 - 1.8</div>
+                        <div class="lcat-item"><span class="lcat-badge lcat-l">Likely</span> 1.8 - 2.4</div>
+                        <div class="lcat-item"><span class="lcat-badge lcat-vl">Very Likely</span> ≥ 2.4</div>
+                    </div>
+                </div>
+
+                <!-- Residual Risk Section -->
+                <div class="methodology-section">
+                    <div class="methodology-header">
+                        <span class="methodology-icon">🔄</span>
+                        <h3>Residual Risk Calculation</h3>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem;">
+                        After mitigations are deployed, likelihood factors are re-assessed while impact remains unchanged:
+                    </p>
+                    <div class="residual-risk-flow">
+                        <div class="flow-step">
+                            <div class="flow-icon">⚠️</div>
+                            <div class="flow-label">Initial Risk</div>
+                            <div class="flow-desc">Impact × Likelihood</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-icon">🛡️</div>
+                            <div class="flow-label">Apply Mitigations</div>
+                            <div class="flow-desc">Security controls</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-icon">📊</div>
+                            <div class="flow-label">Re-assess Likelihood</div>
+                            <div class="flow-desc">Usually decreases</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-icon">✅</div>
+                            <div class="flow-label">Residual Risk</div>
+                            <div class="flow-desc">Impact × New Likelihood</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-top: 15px; font-size: 0.85rem;">
+                        <strong>Note:</strong> Impact typically stays the same (the potential harm doesn't change), 
+                        but likelihood decreases as mitigations make attacks harder to execute.
+                    </p>
+                </div>
             </div>
         </div>
 
-        <!-- Export Tab -->
-        <div id="export" class="tab-content">
+        <!-- Settings Tab (Combined Admin + Export/Import) -->
+        <div id="admin" class="tab-content">
             <div class="card">
-                <h2>Export / Import</h2>
+                <h2>⚙️ Settings</h2>
                 <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                    Manage your TARA assessment data - export for reporting, import from files, or load sample data.
+                    Manage your threat data and customize all framework settings.
                 </p>
 
-                <div class="export-import-grid">
+                <!-- Data Management Section -->
+                <div class="settings-section-title">
+                    <span class="section-icon">📁</span>
+                    <h3>Data Management</h3>
+                </div>
+                <div class="export-import-grid" style="margin-bottom: 30px;">
                     <!-- Export Section -->
                     <div class="export-section">
                         <div class="section-header">
                             <span class="section-icon">📤</span>
-                            <h3>Export Data</h3>
+                            <h3>Export Threats</h3>
                         </div>
-                        <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem;">
-                            Download your threats in CSV or JSON format.
-                        </p>
+                        <p class="admin-desc">Download your threats for backup or reporting.</p>
                         <div class="action-buttons" style="flex-direction: column;">
-                            <button class="btn btn-primary" onclick="exportCSV()" style="width: 100%;">
-                                <span style="margin-right: 8px;">📊</span> Export as CSV
-                            </button>
-                            <button class="btn btn-primary" onclick="exportJSON()" style="width: 100%;">
-                                <span style="margin-right: 8px;">📋</span> Export as JSON
-                            </button>
+                            <button class="btn btn-primary" onclick="exportCSV()" style="width: 100%;">Export as CSV</button>
+                            <button class="btn btn-primary" onclick="exportJSON()" style="width: 100%;">Export as JSON</button>
                         </div>
                     </div>
 
@@ -2255,18 +2716,12 @@
                     <div class="export-section">
                         <div class="section-header">
                             <span class="section-icon">📥</span>
-                            <h3>Import Data</h3>
+                            <h3>Import Threats</h3>
                         </div>
-                        <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem;">
-                            Load threats from a previously exported file.
-                        </p>
+                        <p class="admin-desc">Load threats from a previously exported file.</p>
                         <div class="action-buttons" style="flex-direction: column;">
-                            <button class="btn btn-import" onclick="importCSV()" style="width: 100%;">
-                                <span style="margin-right: 8px;">📊</span> Import from CSV
-                            </button>
-                            <button class="btn btn-import" onclick="importJSON()" style="width: 100%;">
-                                <span style="margin-right: 8px;">📋</span> Import from JSON
-                            </button>
+                            <button class="btn btn-import" onclick="importCSV()" style="width: 100%;">Import from CSV</button>
+                            <button class="btn btn-import" onclick="importJSON()" style="width: 100%;">Import from JSON</button>
                         </div>
                     </div>
 
@@ -2274,45 +2729,32 @@
                     <div class="export-section">
                         <div class="section-header">
                             <span class="section-icon">📄</span>
-                            <h3>Load Paper Data</h3>
+                            <h3>Sample Data</h3>
                         </div>
-                        <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem;">
-                            Load all 14 threats from Table 2 of the paper.
-                        </p>
+                        <p class="admin-desc">Load the 14 threats from Table 2 of the paper.</p>
                         <div class="action-buttons" style="flex-direction: column;">
-                            <button class="btn btn-primary" onclick="loadAllPaperThreats()" style="width: 100%;">
-                                <span style="margin-right: 8px;">📚</span> Load 14 Threats from Paper
-                            </button>
+                            <button class="btn btn-primary" onclick="loadAllPaperThreats()" style="width: 100%;">Load Paper Threats</button>
                         </div>
                     </div>
 
-                    <!-- Danger Zone Section -->
+                    <!-- Delete All Section -->
                     <div class="export-section danger-zone">
                         <div class="section-header">
                             <span class="section-icon">⚠️</span>
-                            <h3>Danger Zone</h3>
+                            <h3>Delete Data</h3>
                         </div>
-                        <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem;">
-                            Permanently delete all threats. This action cannot be undone.
-                        </p>
+                        <p class="admin-desc">Permanently delete all threats.</p>
                         <div class="action-buttons" style="flex-direction: column;">
-                            <button class="btn btn-danger" onclick="deleteAllThreats()" style="width: 100%;">
-                                <span style="margin-right: 8px;">🗑️</span> Delete All Threats
-                            </button>
+                            <button class="btn btn-danger" onclick="deleteAllThreats()" style="width: 100%;">Delete All Threats</button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Admin Panel Tab -->
-        <div id="admin" class="tab-content">
-            <div class="card">
-                <h2>⚙️ Admin Panel</h2>
-                <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                    Full control over all framework settings. Add, edit, or remove any category, factor, or calculation method.
-                </p>
-
+                <!-- Framework Configuration Section -->
+                <div class="settings-section-title">
+                    <span class="section-icon">🔧</span>
+                    <h3>Framework Configuration</h3>
+                </div>
                 <div class="admin-grid">
                     <!-- Threat Classes -->
                     <div class="admin-section">
@@ -2320,7 +2762,7 @@
                             <span class="section-icon">🏷️</span>
                             <h3>Threat Classes</h3>
                         </div>
-                        <p class="admin-desc">Manage threat class categories. All classes can be edited or removed.</p>
+                        <p class="admin-desc">Manage threat class categories.</p>
                         <div class="admin-category-list" id="threat-classes-list"></div>
                         <div class="admin-input-row">
                             <input type="text" id="new-class-input" placeholder="New threat class..." class="admin-input">
@@ -2334,20 +2776,19 @@
                             <span class="section-icon">💥</span>
                             <h3>Impact Categories</h3>
                         </div>
-                        <p class="admin-desc">Manage impact assessment categories. Each uses 0-4 scale.</p>
+                        <p class="admin-desc">Manage impact assessment categories (0-4 scale).</p>
                         <div class="admin-category-list" id="impact-categories-list"></div>
                         <div class="admin-input-row">
                             <input type="text" id="new-impact-category" placeholder="New impact category..." class="admin-input">
                             <button class="btn btn-primary" onclick="addImpactCategory()">+ Add</button>
                         </div>
                         <div class="admin-calc-setting">
-                            <label>Calculation Method:</label>
+                            <label>Calculation:</label>
                             <select id="impact-calc-method" onchange="updateImpactCalculation(this.value)">
-                                <option value="max">Maximum (highest value) ⭐ Paper Default</option>
-                                <option value="average">Average (mean of values)</option>
+                                <option value="max">Maximum ⭐ Default</option>
+                                <option value="average">Average</option>
                             </select>
                         </div>
-                        <div class="admin-default-note">📄 Per the paper: Impact Score = MAX of all impact factors</div>
                     </div>
 
                     <!-- Likelihood Factors -->
@@ -2356,20 +2797,19 @@
                             <span class="section-icon">📊</span>
                             <h3>Likelihood Factors</h3>
                         </div>
-                        <p class="admin-desc">Manage likelihood assessment factors. Each uses 0-3 scale.</p>
+                        <p class="admin-desc">Manage likelihood factors (0-3 scale).</p>
                         <div class="admin-category-list" id="likelihood-factors-list"></div>
                         <div class="admin-input-row">
                             <input type="text" id="new-likelihood-factor" placeholder="New likelihood factor..." class="admin-input">
                             <button class="btn btn-primary" onclick="addLikelihoodFactor()">+ Add</button>
                         </div>
                         <div class="admin-calc-setting">
-                            <label>Calculation Method:</label>
+                            <label>Calculation:</label>
                             <select id="likelihood-calc-method" onchange="updateLikelihoodCalculation(this.value)">
-                                <option value="average">Average (mean of values) ⭐ Paper Default</option>
-                                <option value="max">Maximum (highest value)</option>
+                                <option value="average">Average ⭐ Default</option>
+                                <option value="max">Maximum</option>
                             </select>
                         </div>
-                        <div class="admin-default-note">📄 Per the paper: Likelihood Score = AVG of all factors</div>
                     </div>
 
                     <!-- Impact Levels -->
@@ -2378,7 +2818,7 @@
                             <span class="section-icon">📈</span>
                             <h3>Impact Scale (0-4)</h3>
                         </div>
-                        <p class="admin-desc">Customize the impact level labels and descriptions.</p>
+                        <p class="admin-desc">Customize impact level labels.</p>
                         <div class="admin-levels-list" id="impact-levels-list"></div>
                     </div>
 
@@ -2388,7 +2828,7 @@
                             <span class="section-icon">📉</span>
                             <h3>Likelihood Scale (0-3)</h3>
                         </div>
-                        <p class="admin-desc">Customize the likelihood level labels and descriptions.</p>
+                        <p class="admin-desc">Customize likelihood level labels.</p>
                         <div class="admin-levels-list" id="likelihood-levels-list"></div>
                     </div>
 
@@ -2406,39 +2846,44 @@
                     <div class="admin-section full-width">
                         <div class="section-header">
                             <span class="section-icon">🔢</span>
-                            <h3>Risk Matrix Configuration</h3>
+                            <h3>Risk Matrix</h3>
                         </div>
                         <p class="admin-desc">Configure how Impact × Likelihood maps to Risk Level. Click any cell to change.</p>
                         <div class="admin-matrix-container" id="admin-risk-matrix"></div>
                     </div>
+                </div>
 
-                    <!-- Export/Import Settings Section -->
-                    <div class="admin-section full-width">
+                <!-- Settings Export/Import Section -->
+                <div class="settings-section-title" style="margin-top: 30px;">
+                    <span class="section-icon">💾</span>
+                    <h3>Configuration Backup</h3>
+                </div>
+                <div class="export-import-grid">
+                    <div class="export-section">
                         <div class="section-header">
-                            <span class="section-icon">💾</span>
-                            <h3>Export / Import Settings</h3>
+                            <span class="section-icon">📤</span>
+                            <h3>Export Settings</h3>
                         </div>
-                        <p class="admin-desc">Save your customizations to a file or load settings from another user.</p>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <button class="btn btn-primary" onclick="exportSettings()">
-                                <span style="margin-right: 8px;">📤</span> Export Settings
-                            </button>
-                            <button class="btn btn-import" onclick="importSettings()">
-                                <span style="margin-right: 8px;">📥</span> Import Settings
-                            </button>
-                        </div>
+                        <p class="admin-desc">Save your customizations to a file.</p>
+                        <button class="btn btn-primary" onclick="exportSettings()" style="width: 100%;">Export Settings</button>
                     </div>
 
-                    <!-- Reset Section -->
-                    <div class="admin-section full-width danger-zone">
+                    <div class="export-section">
                         <div class="section-header">
-                            <span class="section-icon">⚠️</span>
-                            <h3>Reset Settings</h3>
+                            <span class="section-icon">📥</span>
+                            <h3>Import Settings</h3>
                         </div>
-                        <p class="admin-desc">Reset all customizations to default values. This cannot be undone.</p>
-                        <button class="btn btn-danger" onclick="resetAllSettings()">
-                            <span style="margin-right: 8px;">🔄</span> Reset All to Defaults
-                        </button>
+                        <p class="admin-desc">Load settings from another user.</p>
+                        <button class="btn btn-import" onclick="importSettings()" style="width: 100%;">Import Settings</button>
+                    </div>
+
+                    <div class="export-section danger-zone">
+                        <div class="section-header">
+                            <span class="section-icon">🔄</span>
+                            <h3>Reset All</h3>
+                        </div>
+                        <p class="admin-desc">Reset all settings to defaults.</p>
+                        <button class="btn btn-danger" onclick="resetAllSettings()" style="width: 100%;">Reset to Defaults</button>
                     </div>
                 </div>
             </div>
@@ -3689,7 +4134,7 @@
             saveThreatsToStorage();
             updateTargetFilter();
             clearForm();
-            alert('Threat saved successfully!');
+            showToast('Threat saved successfully!', 'success');
             showTab('threats-list');
         }
         
@@ -3833,7 +4278,7 @@
                     <td><span class="risk-badge risk-${threat.riskLevel.toLowerCase().replace(' ', '-')}">${threat.riskLevel}</span></td>
                     <td><span class="risk-badge risk-${threat.residualRiskLevel.toLowerCase().replace(' ', '-')}">${threat.residualRiskLevel}</span></td>
                     <td class="threat-actions">
-                        <button class="btn btn-secondary" onclick="event.stopPropagation(); duplicateThreat('${threat.id}')" title="Duplicate">📋</button>
+                        <button class="btn btn-secondary" onclick="event.stopPropagation(); duplicateThreat('${threat.id}')" title="Duplicate">Copy</button>
                         <button class="btn btn-secondary" onclick="event.stopPropagation(); editThreat('${threat.id}')">Edit</button>
                         <button class="btn btn-danger" onclick="event.stopPropagation(); deleteThreat('${threat.id}')">Del</button>
                     </td>
@@ -3970,7 +4415,7 @@
                 html += `<td><span class="risk-badge risk-${threat.riskLevel.toLowerCase().replace(' ', '-')}">${threat.riskLevel}</span></td>
                     <td class="border-right"><span class="risk-badge risk-${threat.residualRiskLevel.toLowerCase().replace(' ', '-')}">${threat.residualRiskLevel}</span></td>
                     <td class="threat-actions">
-                        <button class="btn btn-secondary" onclick="duplicateThreat('${threat.id}')" style="padding: 4px 8px; font-size: 0.8rem;" title="Duplicate">📋</button>
+                        <button class="btn btn-secondary" onclick="duplicateThreat('${threat.id}')" style="padding: 4px 8px; font-size: 0.8rem;" title="Duplicate">Copy</button>
                         <button class="btn btn-secondary" onclick="editThreat('${threat.id}')" style="padding: 4px 8px; font-size: 0.8rem;">Edit</button>
                         <button class="btn btn-danger" onclick="deleteThreat('${threat.id}')" style="padding: 4px 8px; font-size: 0.8rem;">Del</button>
                     </td>
@@ -4074,13 +4519,15 @@
             showTab('add-threat');
         }
 
-        function deleteThreat(id) {
-            if (confirm('Are you sure you want to delete this threat?')) {
+        async function deleteThreat(id) {
+            const confirmed = await showConfirm('Delete Threat', 'Are you sure you want to delete this threat?', true);
+            if (confirmed) {
                 threats = threats.filter(t => t.id !== id);
                 saveThreatsToStorage();
                 filterThreats();
                 updateDashboard();
                 renderThreatsOnMatrix();
+                showToast('Threat deleted', 'success');
             }
         }
 
@@ -4659,9 +5106,10 @@
         }
 
         // Load all 14 threats from Table 2 in the paper
-        function loadAllPaperThreats() {
+        async function loadAllPaperThreats() {
             if (threats.length > 0) {
-                if (!confirm('This will replace existing threats with all 14 threats from Table 2. Continue?')) return;
+                const confirmed = await showConfirm('Replace Threats', 'This will replace existing threats with all 14 threats from Table 2. Continue?', true);
+                if (!confirmed) return;
             }
             
             threats = [
@@ -4940,7 +5388,7 @@
             
             saveThreatsToStorage();
             updateTargetFilter();
-            alert('Loaded all 14 threats from Table 2 of the paper!');
+            showToast('Loaded all 14 threats from the paper!', 'success');
             updateDashboard();
             
             // Switch to threats list to show the loaded data
@@ -4963,7 +5411,7 @@
         // Delete all threats functionality
         function deleteAllThreats() {
             if (threats.length === 0) {
-                alert('No threats to delete.');
+                showToast('No threats to delete.', 'warning');
                 return;
             }
             
@@ -4985,7 +5433,7 @@
             updateDashboard();
             filterThreats();
             renderThreatsOnMatrix();
-            alert('All threats have been deleted.');
+            showToast('All threats have been deleted.', 'success');
         }
 
         // Listen for input to enable/disable delete button
