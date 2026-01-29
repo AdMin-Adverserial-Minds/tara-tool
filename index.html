@@ -450,13 +450,22 @@
         }
 
         .threat-actions {
-            display: flex;
-            gap: 5px;
+            display: inline-flex;
+            gap: 6px;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            justify-content: center;
+            align-items: center;
         }
 
         .threat-actions button {
             padding: 5px 10px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        
+        .expanded-table td {
+            vertical-align: middle;
         }
 
         .modal {
@@ -627,6 +636,98 @@
             background: #b91c1c;
         }
 
+        /* Citation Card Styles */
+        .citation-card {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(99, 102, 241, 0.1) 100%);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid var(--accent);
+            margin-top: 20px;
+        }
+        
+        .citation-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .citation-icon {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+        
+        .citation-title h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+        
+        .citation-title p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .paper-info {
+            background: var(--bg);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .paper-title {
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+            line-height: 1.4;
+        }
+        
+        .paper-authors {
+            color: var(--accent);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        
+        .paper-venue {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        .citation-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .citation-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .citation-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+        
+        .link-icon {
+            font-size: 1.1rem;
+        }
+        
         /* Methodology Section Styles */
         .methodology-quick-ref {
             display: grid;
@@ -1470,8 +1571,8 @@
         /* Expanded table styles */
         .expanded-table {
             font-size: 0.95rem;
-            min-width: 1300px;
-            table-layout: fixed;
+            min-width: 1500px;
+            table-layout: auto;
         }
 
         .expanded-table th {
@@ -1555,7 +1656,12 @@
         .expanded-table .col-risk { width: 70px; }
         .expanded-table .col-risk-main { width: 75px; }
         .expanded-table .col-risk-resid { width: 70px; }
-        .expanded-table .col-actions { width: 75px; }
+        .expanded-table .col-actions { min-width: 180px !important; width: 180px !important; }
+        .expanded-table td:last-child {
+            min-width: 180px !important;
+            width: 180px !important;
+            text-align: center !important;
+        }
 
         /* Impact cell coloring */
         .impact-cell {
@@ -2061,6 +2167,13 @@
                 </div>
 
                 <div class="card">
+                    <h2>🛡️ Residual Risk</h2>
+                    <div id="residual-risk-chart" style="height: 280px; display: flex; align-items: flex-end; gap: 20px; padding: 20px;">
+                        <div style="text-align: center; color: var(--text-secondary);">Add threats to see residual risk distribution</div>
+                    </div>
+                </div>
+
+                <div class="card">
                     <h2>🎯 STRIDE Categories</h2>
                     <div id="stride-chart" style="height: 280px; display: flex; align-items: flex-end; gap: 15px; padding: 20px;">
                         <div style="text-align: center; color: var(--text-secondary);">Add threats to see STRIDE distribution</div>
@@ -2080,6 +2193,39 @@
                 <div id="recent-threats">
                     <p style="color: var(--text-secondary);">No threats added yet. Go to "Add Threat" to begin your assessment.</p>
                 </div>
+            </div>
+
+            <!-- Citation Card -->
+            <div class="citation-card">
+                <div class="citation-header">
+                    <span class="citation-icon">📄</span>
+                    <div class="citation-title">
+                        <h3>Cite This Work</h3>
+                        <p>If you use this framework in your research or work, please cite the paper:</p>
+                    </div>
+                </div>
+                
+                <div class="paper-info">
+                    <div class="paper-title">"Invitation Is All You Need! Promptware Attacks Against LLM-Powered Assistants in Production Are Practical and Dangerous"</div>
+                    <div class="paper-authors">Ben Nassi, Stav Cohen, Or Yair</div>
+                    <div class="paper-venue">arXiv:2508.12175 [cs.CR], 2025</div>
+                </div>
+
+                <div class="citation-links">
+                    <a href="https://arxiv.org/abs/2508.12175" target="_blank" class="citation-link">
+                        <span class="link-icon">📑</span>
+                        <span>Read Paper (arXiv)</span>
+                    </a>
+                    <a href="https://sites.google.com/view/invitation-is-all-you-need/home/" target="_blank" class="citation-link">
+                        <span class="link-icon">🌐</span>
+                        <span>Project Website</span>
+                    </a>
+                    <button class="citation-link" onclick="copyBibtex()">
+                        <span class="link-icon">📋</span>
+                        <span>Copy BibTeX</span>
+                    </button>
+                </div>
+
             </div>
         </div>
 
@@ -2502,43 +2648,36 @@
                             <div class="stride-letter">S</div>
                             <div class="stride-name">Spoofing</div>
                             <div class="stride-desc">Impersonating something or someone else</div>
-                            <div class="stride-example">LLM impersonates trusted source in phishing attacks</div>
                         </div>
                         <div class="stride-card stride-t">
                             <div class="stride-letter">T</div>
                             <div class="stride-name">Tampering</div>
                             <div class="stride-desc">Modifying data or code without authorization</div>
-                            <div class="stride-example">Prompt injection to modify LLM behavior</div>
                         </div>
                         <div class="stride-card stride-r">
                             <div class="stride-letter">R</div>
                             <div class="stride-name">Repudiation</div>
                             <div class="stride-desc">Denying actions were performed</div>
-                            <div class="stride-example">LLM actions without proper audit trails</div>
                         </div>
                         <div class="stride-card stride-i">
                             <div class="stride-letter">I</div>
                             <div class="stride-name">Information Disclosure</div>
                             <div class="stride-desc">Exposing data to unauthorized parties</div>
-                            <div class="stride-example">Data exfiltration via crafted prompts</div>
                         </div>
                         <div class="stride-card stride-d">
                             <div class="stride-letter">D</div>
                             <div class="stride-name">Denial of Service</div>
                             <div class="stride-desc">Disrupting service availability</div>
-                            <div class="stride-example">Resource exhaustion attacks on LLM</div>
                         </div>
                         <div class="stride-card stride-e">
                             <div class="stride-letter">E</div>
                             <div class="stride-name">Elevation of Privilege</div>
                             <div class="stride-desc">Gaining unauthorized access or capabilities</div>
-                            <div class="stride-example">Agent/app invocation without permission</div>
                         </div>
                         <div class="stride-card stride-o">
                             <div class="stride-letter">O</div>
                             <div class="stride-name">Other</div>
                             <div class="stride-desc">Threats not fitting traditional categories</div>
-                            <div class="stride-example">Novel LLM-specific attack vectors</div>
                         </div>
                     </div>
                 </div>
@@ -2943,6 +3082,24 @@
             toastTimeout = setTimeout(() => {
                 toast.classList.remove('show');
             }, 3000);
+        }
+        
+        // Copy BibTeX to clipboard
+        function copyBibtex() {
+            const bibtex = `@misc{nassi2025invitationneedpromptwareattacks,
+      title={Invitation Is All You Need! Promptware Attacks Against LLM-Powered Assistants in Production Are Practical and Dangerous}, 
+      author={Ben Nassi and Stav Cohen and Or Yair},
+      year={2025},
+      eprint={2508.12175},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2508.12175}, 
+}`;
+            navigator.clipboard.writeText(bibtex).then(() => {
+                showToast('BibTeX copied to clipboard!', 'success');
+            }).catch(() => {
+                showToast('Failed to copy BibTeX', 'error');
+            });
         }
         
         // Confirmation modal system
@@ -3844,14 +4001,24 @@
                         valB = b.likelihoodScore || 0;
                         break;
                     case 'risk':
-                        const riskOrder = { 'Critical': 6, 'Very High': 5, 'High': 4, 'Medium': 3, 'Low': 2, 'Very Low': 1 };
-                        valA = riskOrder[a.riskLevel] || 0;
-                        valB = riskOrder[b.riskLevel] || 0;
+                        // Build dynamic risk order from config (higher index = higher risk)
+                        const riskOrder = {};
+                        config.riskLevels.forEach((level, idx) => {
+                            riskOrder[level.name] = idx + 1;
+                            riskOrder[level.name.toUpperCase()] = idx + 1;
+                        });
+                        valA = riskOrder[a.riskLevel] || riskOrder[a.riskLevel?.toUpperCase()] || 0;
+                        valB = riskOrder[b.riskLevel] || riskOrder[b.riskLevel?.toUpperCase()] || 0;
                         break;
                     case 'residual':
-                        const residualOrder = { 'Critical': 6, 'Very High': 5, 'High': 4, 'Medium': 3, 'Low': 2, 'Very Low': 1 };
-                        valA = residualOrder[a.residualRiskLevel] || 0;
-                        valB = residualOrder[b.residualRiskLevel] || 0;
+                        // Build dynamic residual order from config (higher index = higher risk)
+                        const residualOrder = {};
+                        config.riskLevels.forEach((level, idx) => {
+                            residualOrder[level.name] = idx + 1;
+                            residualOrder[level.name.toUpperCase()] = idx + 1;
+                        });
+                        valA = residualOrder[a.residualRiskLevel] || residualOrder[a.residualRiskLevel?.toUpperCase()] || 0;
+                        valB = residualOrder[b.residualRiskLevel] || residualOrder[b.residualRiskLevel?.toUpperCase()] || 0;
                         break;
                     default:
                         valA = a[field] || '';
@@ -4263,7 +4430,7 @@
             html += `<th class="sortable ${currentSort.field === 'likelihoodScore' ? 'sort-' + currentSort.direction : ''}" onclick="sortBy('likelihoodScore')">Likelihood<span class="sort-icon"></span></th>`;
             html += `<th class="sortable ${currentSort.field === 'risk' ? 'sort-' + currentSort.direction : ''}" onclick="sortBy('risk')">Risk<span class="sort-icon"></span></th>`;
             html += `<th class="sortable ${currentSort.field === 'residual' ? 'sort-' + currentSort.direction : ''}" onclick="sortBy('residual')">Residual<span class="sort-icon"></span></th>`;
-            html += '<th>Actions</th>';
+            html += '<th style="text-align: center;">Actions</th>';
             html += '</tr></thead><tbody>';
             
             filteredThreats.forEach(threat => {
@@ -4277,10 +4444,12 @@
                     <td><span class="risk-badge risk-${getLikelihoodClass(threat.likelihoodScore)}">${getLikelihoodLabel(threat.likelihoodScore)}</span></td>
                     <td><span class="risk-badge risk-${threat.riskLevel.toLowerCase().replace(' ', '-')}">${threat.riskLevel}</span></td>
                     <td><span class="risk-badge risk-${threat.residualRiskLevel.toLowerCase().replace(' ', '-')}">${threat.residualRiskLevel}</span></td>
-                    <td class="threat-actions">
-                        <button class="btn btn-secondary" onclick="event.stopPropagation(); duplicateThreat('${threat.id}')" title="Duplicate">Copy</button>
-                        <button class="btn btn-secondary" onclick="event.stopPropagation(); editThreat('${threat.id}')">Edit</button>
-                        <button class="btn btn-danger" onclick="event.stopPropagation(); deleteThreat('${threat.id}')">Del</button>
+                    <td>
+                        <div class="threat-actions">
+                            <button class="btn btn-secondary" onclick="event.stopPropagation(); duplicateThreat('${threat.id}')" title="Duplicate threat">Dup</button>
+                            <button class="btn btn-secondary" onclick="event.stopPropagation(); editThreat('${threat.id}')" title="Edit threat">Edit</button>
+                            <button class="btn btn-danger" onclick="event.stopPropagation(); deleteThreat('${threat.id}')" title="Delete threat">Del</button>
+                        </div>
                     </td>
                 </tr>`;
                 
@@ -4386,7 +4555,7 @@
             // Risk columns - sortable
             html += `<th class="tooltip-header risk-header col-risk-main sortable ${currentSort.field === 'risk' ? 'sort-' + currentSort.direction : ''}" onclick="sortBy('risk')" title="Risk Level">Risk<span class="sort-icon"></span></th>`;
             html += `<th class="tooltip-header risk-header col-risk-resid border-right sortable ${currentSort.field === 'residual' ? 'sort-' + currentSort.direction : ''}" onclick="sortBy('residual')" title="Residual Risk">Resid<span class="sort-icon"></span></th>`;
-            html += '<th class="col-actions">Actions</th>';
+            html += '<th class="col-actions" style="text-align: center;">Actions</th>';
             
             html += '</tr></thead><tbody>';
             
@@ -4414,10 +4583,12 @@
                 
                 html += `<td><span class="risk-badge risk-${threat.riskLevel.toLowerCase().replace(' ', '-')}">${threat.riskLevel}</span></td>
                     <td class="border-right"><span class="risk-badge risk-${threat.residualRiskLevel.toLowerCase().replace(' ', '-')}">${threat.residualRiskLevel}</span></td>
-                    <td class="threat-actions">
-                        <button class="btn btn-secondary" onclick="duplicateThreat('${threat.id}')" style="padding: 4px 8px; font-size: 0.8rem;" title="Duplicate">Copy</button>
-                        <button class="btn btn-secondary" onclick="editThreat('${threat.id}')" style="padding: 4px 8px; font-size: 0.8rem;">Edit</button>
-                        <button class="btn btn-danger" onclick="deleteThreat('${threat.id}')" style="padding: 4px 8px; font-size: 0.8rem;">Del</button>
+                    <td>
+                        <div class="threat-actions">
+                            <button class="btn btn-secondary" onclick="duplicateThreat('${threat.id}')" title="Duplicate threat">Dup</button>
+                            <button class="btn btn-secondary" onclick="editThreat('${threat.id}')" title="Edit threat">Edit</button>
+                            <button class="btn btn-danger" onclick="deleteThreat('${threat.id}')" title="Delete threat">Del</button>
+                        </div>
                     </td>
                 </tr>`;
             });
@@ -4560,6 +4731,7 @@
             
             // Update all charts
             updateRiskChart(counts);
+            updateResidualRiskChart();
             updateStrideChart();
             updateClassChart();
             
@@ -4575,6 +4747,60 @@
                 chartContainer.innerHTML = '<div style="text-align: center; color: var(--text-secondary); width: 100%;">Add threats to see risk distribution</div>';
                 return;
             }
+            
+            const maxHeight = 200;
+            const riskData = [
+                { label: 'Critical', count: counts.critical, color: 'var(--critical)' },
+                { label: 'V.High', count: counts.veryHigh, color: 'var(--very-high)' },
+                { label: 'High', count: counts.high, color: 'var(--high)' },
+                { label: 'Medium', count: counts.medium, color: 'var(--medium)' },
+                { label: 'Low', count: counts.low, color: 'var(--low)' },
+                { label: 'V.Low', count: counts.veryLow, color: 'var(--very-low)' }
+            ];
+            
+            const maxCount = Math.max(...riskData.map(d => d.count), 1);
+            
+            let html = '<div style="display: flex; align-items: flex-end; gap: 15px; width: 100%; justify-content: center; height: 100%;">';
+            riskData.forEach(d => {
+                const height = (d.count / maxCount) * maxHeight;
+                html += `
+                    <div style="text-align: center; flex: 1; max-width: 80px;">
+                        <div style="height: ${height}px; background: ${d.color}; border-radius: 6px 6px 0 0; min-height: ${d.count > 0 ? 20 : 5}px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">${d.count > 0 ? d.count : ''}</div>
+                        <div style="margin-top: 8px; font-size: 0.75rem; color: var(--text-secondary);">${d.label}</div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            chartContainer.innerHTML = html;
+        }
+        
+        function updateResidualRiskChart() {
+            const chartContainer = document.getElementById('residual-risk-chart');
+            const total = threats.length || 1;
+            
+            if (threats.length === 0) {
+                chartContainer.innerHTML = '<div style="text-align: center; color: var(--text-secondary); width: 100%;">Add threats to see residual risk distribution</div>';
+                return;
+            }
+            
+            // Count residual risk levels
+            const counts = {
+                critical: 0,
+                veryHigh: 0,
+                high: 0,
+                medium: 0,
+                low: 0,
+                veryLow: 0
+            };
+            
+            threats.forEach(threat => {
+                if (threat.residualRiskLevel === 'CRITICAL') counts.critical++;
+                else if (threat.residualRiskLevel === 'VERY HIGH') counts.veryHigh++;
+                else if (threat.residualRiskLevel === 'HIGH') counts.high++;
+                else if (threat.residualRiskLevel === 'MEDIUM') counts.medium++;
+                else if (threat.residualRiskLevel === 'LOW') counts.low++;
+                else counts.veryLow++;
+            });
             
             const maxHeight = 200;
             const riskData = [
